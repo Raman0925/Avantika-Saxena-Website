@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{DOCTOR_NAME}} — Classical Homeopathy in {{CITY}}, {{STATE}}</title>
+  <meta name="description" content="{{DOCTOR_NAME}} ({{QUALIFICATION}}) offers gentle, safe, and natural homeopathic treatment in {{CITY}}, {{STATE}}. Book your consultation on WhatsApp: {{WHATSAPP}}."/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; color: #1a2e1a; background: #F9F6F0; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 5%; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo { font-size: 1.25rem; font-weight: 700; color: #1B5E20; line-height: 1.2; }
+    .logo small { display: block; font-size: .7rem; font-weight: 400; color: #388E3C; letter-spacing: 1px; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a { padding: 8px 14px; text-decoration: none; color: #444; font-size: .9rem; border-radius: 6px; }
+    .nav-links a:hover { color: #1B5E20; background: #F1F8E9; }
+    .nav-cta {
+      background: #25D366; color: #fff !important; padding: 10px 20px !important;
+      border-radius: 8px; font-weight: 600; display: flex; align-items: center; gap: 7px;
+    }
+    .nav-cta:hover { background: #1ebe57 !important; }
+    @media (max-width: 720px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #F1F8E9 0%, #F9F6F0 55%, #fff 100%);
+      padding: 80px 5% 60px;
+      display: flex; align-items: center; gap: 60px; flex-wrap: wrap;
+    }
+    .hero-text { flex: 1; min-width: 280px; }
+    .hero-badge {
+      display: inline-block; background: #E8F5E9; color: #2E7D32; border: 1px solid #A5D6A7;
+      font-size: .78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+    }
+    .hero-text h1 { font-size: 2.5rem; line-height: 1.22; color: #1B5E20; margin-bottom: 14px; }
+    .hero-text h1 span { color: #C8A84B; }
+    .tagline {
+      font-size: 1rem; color: #388E3C; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 18px;
+    }
+    .tagline span { margin: 0 8px; opacity: .5; }
+    .hero-text p { font-size: 1.05rem; color: #4a5a4a; line-height: 1.75; margin-bottom: 34px; max-width: 480px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-whatsapp {
+      background: #25D366; color: #fff; padding: 14px 28px;
+      border-radius: 8px; font-size: 1rem; font-weight: 700;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 9px;
+      box-shadow: 0 4px 18px rgba(37,211,102,.3);
+    }
+    .btn-whatsapp:hover { background: #1ebe57; }
+    .btn-call {
+      border: 2px solid #1B5E20; color: #1B5E20; padding: 13px 26px;
+      border-radius: 8px; font-size: 1rem; font-weight: 600;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-call:hover { background: #F1F8E9; }
+    .hero-image { flex: 1; min-width: 260px; text-align: center; position: relative; }
+    .hero-image .photo-wrap {
+      display: inline-block; position: relative;
+      background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      padding: 8px; box-shadow: 0 20px 60px rgba(27,94,32,.15);
+    }
+    .hero-image img {
+      width: 320px; max-width: 100%; border-radius: inherit; display: block;
+    }
+    .hero-image .photo-placeholder {
+      width: 320px; max-width: 100%; height: 380px;
+      background: linear-gradient(160deg, #C8E6C9 0%, #A5D6A7 100%);
+      border-radius: inherit;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: #2E7D32; font-size: .9rem; gap: 10px;
+    }
+    .hero-image .photo-placeholder .icon { font-size: 3rem; }
+    .hero-image .photo-placeholder small { opacity: .6; font-size: .75rem; }
+    .leaf-accent { position: absolute; font-size: 2rem; }
+    .leaf-accent.top { top: -10px; right: 20px; }
+    .leaf-accent.bottom { bottom: -5px; left: 10px; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: #1B5E20; color: #fff;
+      display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+    }
+    .trust-item {
+      text-align: center; padding: 22px 40px;
+      border-right: 1px solid rgba(255,255,255,.15);
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-item strong { display: block; font-size: 1.7rem; font-weight: 800; color: #C8E6C9; }
+    .trust-item span { font-size: .82rem; opacity: .85; letter-spacing: .5px; }
+    @media (max-width: 640px) {
+      .trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); width: 50%; }
+    }
+
+    /* ── SHARED SECTION ── */
+    section { padding: 72px 5%; }
+    .section-label {
+      color: #388E3C; font-size: .78rem; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 10px;
+    }
+    h2 { font-size: 2rem; color: #1B5E20; margin-bottom: 14px; }
+    .section-sub { color: #5a6e5a; max-width: 540px; line-height: 1.75; margin-bottom: 50px; }
+
+    /* ── ABOUT / WHY HOMEOPATHY ── */
+    .about { background: #fff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .pillar {
+      background: #F9F6F0; border: 1px solid #DCEDC8; border-radius: 12px;
+      padding: 22px 18px; text-align: center;
+    }
+    .pillar-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .pillar h4 { font-size: .95rem; color: #1B5E20; font-weight: 700; margin-bottom: 6px; }
+    .pillar p { font-size: .82rem; color: #666; line-height: 1.5; }
+    .about-text p { font-size: 1rem; color: #4a5a4a; line-height: 1.8; margin-bottom: 18px; }
+    .gold-quote {
+      border-left: 4px solid #C8A84B; padding: 16px 20px;
+      background: #FDF8EC; border-radius: 0 8px 8px 0;
+      font-style: italic; color: #7a6a2a; font-size: .95rem; line-height: 1.7;
+      margin: 24px 0;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: #F9F6F0; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+    .service-card {
+      background: #fff; border: 1px solid #DCEDC8; border-radius: 14px;
+      padding: 28px 22px; transition: box-shadow .2s, transform .2s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, #1B5E20, #4CAF50);
+    }
+    .service-card:hover { box-shadow: 0 10px 35px rgba(27,94,32,.13); transform: translateY(-3px); }
+    .service-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .service-card h3 { font-size: 1rem; color: #1B5E20; margin-bottom: 8px; font-weight: 700; }
+    .service-card p { font-size: .87rem; color: #666; line-height: 1.6; }
+
+    /* ── WHY CHOOSE US ── */
+    .why-us { background: #fff; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; }
+    .why-item { display: flex; gap: 16px; align-items: flex-start; }
+    .why-icon-wrap {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+    }
+    .why-item h4 { font-size: 1rem; color: #1B5E20; margin-bottom: 6px; font-weight: 700; }
+    .why-item p { font-size: .87rem; color: #5a6e5a; line-height: 1.65; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: #F9F6F0; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .testimonial {
+      background: #fff; border: 1px solid #DCEDC8; border-radius: 14px;
+      padding: 28px; box-shadow: 0 4px 20px rgba(0,0,0,.04);
+    }
+    .stars { color: #C8A84B; font-size: 1.1rem; margin-bottom: 14px; }
+    .testimonial p { font-size: .93rem; color: #4a5a4a; line-height: 1.75; font-style: italic; }
+    .testimonial-author { margin-top: 16px; font-weight: 700; color: #1B5E20; font-size: .88rem; }
+    .testimonial-cond { font-size: .78rem; color: #888; font-weight: 400; font-style: normal; }
+
+    /* ── TIMING SECTION ── */
+    .timing { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); color: #fff; }
+    .timing h2 { color: #fff; }
+    .timing .section-label { color: #A5D6A7; }
+    .timing .section-sub { color: rgba(255,255,255,.75); }
+    .timing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+    .timing-card {
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      border-radius: 14px; padding: 30px 24px; text-align: center; backdrop-filter: blur(4px);
+    }
+    .timing-card .day-label { font-size: .82rem; letter-spacing: 2px; text-transform: uppercase; opacity: .75; margin-bottom: 8px; }
+    .timing-card .hours { font-size: 1.4rem; font-weight: 800; color: #C8E6C9; margin-bottom: 8px; }
+    .timing-card .note { font-size: .82rem; opacity: .7; }
+    .timing-icon { font-size: 2rem; margin-bottom: 14px; }
+
+    /* ── BOOKING CTA ── */
+    .booking-cta { background: #F9F6F0; text-align: center; }
+    .booking-cta h2 { font-size: 2.2rem; }
+    .booking-cta .section-sub { margin: 0 auto 40px; }
+    .booking-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+    .btn-whatsapp-large {
+      background: #25D366; color: #fff; padding: 18px 40px;
+      border-radius: 10px; font-size: 1.15rem; font-weight: 800;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 12px;
+      box-shadow: 0 8px 30px rgba(37,211,102,.35); letter-spacing: .5px;
+    }
+    .btn-whatsapp-large:hover { background: #1ebe57; transform: translateY(-2px); }
+    .btn-call-large {
+      border: 2px solid #1B5E20; color: #1B5E20; padding: 17px 36px;
+      border-radius: 10px; font-size: 1.05rem; font-weight: 700;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+    }
+    .btn-call-large:hover { background: #F1F8E9; }
+    .booking-note { font-size: .85rem; color: #888; }
+    .booking-note strong { color: #388E3C; }
+
+    /* ── CONTACT ── */
+    .contact { background: #fff; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+    @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-info h3 { font-size: 1.2rem; color: #1B5E20; margin-bottom: 22px; font-weight: 700; }
+    .contact-line { display: flex; gap: 13px; align-items: flex-start; margin-bottom: 18px; font-size: .95rem; color: #444; }
+    .contact-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+    .contact-line a { color: #1B5E20; text-decoration: none; }
+    .contact-line a:hover { text-decoration: underline; }
+    .map-placeholder {
+      background: #F1F8E9; border-radius: 12px; height: 280px;
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      gap: 8px; color: #2E7D32; font-size: .9rem;
+      border: 2px dashed #A5D6A7; text-align: center; padding: 20px;
+    }
+    .map-placeholder .map-icon { font-size: 2.5rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0a2e0a; color: rgba(255,255,255,.65);
+      text-align: center; padding: 30px 5%; font-size: .83rem; line-height: 1.8;
+    }
+    footer a { color: #81C784; text-decoration: none; }
+    footer .footer-tagline { color: #C8A84B; font-weight: 600; margin-bottom: 8px; font-size: .9rem; }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: #25D366; color: #fff; border-radius: 50%;
+      width: 62px; height: 62px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.9rem; box-shadow: 0 6px 24px rgba(37,211,102,.45);
+      text-decoration: none; transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+
+    @media (max-width: 600px) {
+      .hero-text h1 { font-size: 1.85rem; }
+      .about-pillars { grid-template-columns: 1fr 1fr; }
+      section { padding: 52px 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    🌿 {{DOCTOR_NAME}}
+    <small>{{QUALIFICATION}} &nbsp;·&nbsp; Classical Homeopathy</small>
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#timing">Timings</a>
+    <a href="#contact">Contact</a>
+    <a href="https://wa.me/{{WHATSAPP_RAW}}?text=Hello%20Doctor%2C%20I%20would%20like%20to%20book%20a%20consultation." class="nav-cta" target="_blank" rel="noopener">
+      📱 Book on WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">🌿 Classical Homeopathy</div>
+    <h1>Heal Naturally with <span>Dr. {{DOCTOR_NAME}}</span></h1>
+    <div class="tagline">Gentle <span>|</span> Safe <span>|</span> Natural <span>|</span> Classical</div>
+    <p>Experience the power of authentic classical homeopathy — treating the root cause, not just symptoms. Personalised remedies for every individual, with medicines delivered to your doorstep.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/{{WHATSAPP_RAW}}?text=Hello%20Doctor%2C%20I%20would%20like%20to%20book%20a%20consultation."
+         class="btn-whatsapp" target="_blank" rel="noopener">
+        💬 Book via WhatsApp
+      </a>
+      <a href="tel:{{PHONE_RAW}}" class="btn-call">📞 Call {{PHONE}}</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="photo-wrap">
+      <!-- Replace src with actual doctor photo -->
+      <div class="photo-placeholder">
+        <div class="icon">👨‍⚕️</div>
+        <div>{{DOCTOR_NAME}}</div>
+        <small>Replace with doctor photo</small>
+      </div>
+    </div>
+    <span class="leaf-accent top">🍃</span>
+    <span class="leaf-accent bottom">🌿</span>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <strong>{{YEARS_EXP}}+</strong>
+    <span>Years Experience</span>
+  </div>
+  <div class="trust-item">
+    <strong>{{PATIENTS_TREATED}}+</strong>
+    <span>Patients Treated</span>
+  </div>
+  <div class="trust-item">
+    <strong>50+</strong>
+    <span>Conditions Treated</span>
+  </div>
+  <div class="trust-item">
+    <strong>95%</strong>
+    <span>Patient Satisfaction</span>
+  </div>
+</div>
+
+<!-- ABOUT / WHY HOMEOPATHY -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-label">Why Homeopathy</div>
+      <h2>Gentle Healing from Within</h2>
+      <p>Homeopathy is a 200-year-old science that stimulates the body's own healing intelligence. Unlike conventional medicines, homeopathic remedies work with your body — addressing the root cause of disease while strengthening your overall vitality.</p>
+      <blockquote class="gold-quote">
+        "The highest ideal of cure is the rapid, gentle, and permanent restoration of health." — Samuel Hahnemann, Father of Homeopathy
+      </blockquote>
+      <p>With classical homeopathy, every patient receives a unique, individualised prescription. No two people are treated alike, because no two people are alike.</p>
+    </div>
+    <div>
+      <div class="about-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🌱</div>
+          <h4>No Side Effects</h4>
+          <p>Safe for all ages — from newborns to seniors. No toxic load on the body.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🎯</div>
+          <h4>Root Cause Treatment</h4>
+          <p>We treat the person, not just the disease. Lasting relief, not suppression.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🧬</div>
+          <h4>Holistic Approach</h4>
+          <p>Mind, body, and spirit considered together for complete well-being.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">💊</div>
+          <h4>Natural Medicines</h4>
+          <p>Prepared from plants, minerals, and natural substances. Gentle on the body.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-label">What We Treat</div>
+  <h2>Conditions We Specialise In</h2>
+  <p class="section-sub">Classical homeopathy offers deep, lasting relief across a wide range of acute and chronic conditions.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🤒</div>
+      <h3>Acute &amp; Chronic Diseases</h3>
+      <p>Fever, infections, flu — and long-standing chronic conditions like diabetes complications, hypertension support, and autoimmune disorders.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🫁</div>
+      <h3>Digestive Disorders</h3>
+      <p>IBS, acidity, bloating, constipation, gastritis, colitis — holistic gut healing without dependency on antacids.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3>Skin &amp; Hair Problems</h3>
+      <p>Eczema, psoriasis, acne, urticaria, hair fall, alopecia — treating skin from within for clear, lasting results.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌸</div>
+      <h3>Women's Health</h3>
+      <p>PCOS, irregular periods, menstrual pain, hormonal imbalances, menopause symptoms — gentle natural support.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛡️</div>
+      <h3>Immunity &amp; General Wellness</h3>
+      <p>Recurrent infections, low immunity, fatigue, stress management — build your body's natural defences.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🧒</div>
+      <h3>Paediatric &amp; Child Health</h3>
+      <p>Behavioural issues, recurrent colds, adenoids, tonsillitis, developmental support — safe remedies for growing children.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+  <div class="section-label">Our Promise</div>
+  <h2>Care • Compassion • Commitment</h2>
+  <p class="section-sub">Your health is our highest priority. Here's what you can expect when you consult with us.</p>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-icon-wrap">🔒</div>
+      <div>
+        <h4>100% Confidential &amp; Secure</h4>
+        <p>All consultations are completely private. Your health information is handled with utmost discretion and respect.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon-wrap">👤</div>
+      <div>
+        <h4>Personalised Treatment</h4>
+        <p>Every prescription is tailored to you as an individual — your symptoms, your history, your constitution.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon-wrap">📦</div>
+      <div>
+        <h4>Medicines Delivered to Doorstep</h4>
+        <p>We courier your remedies directly to your home, anywhere in India. No pharmacy trips needed.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon-wrap">❤️</div>
+      <div>
+        <h4>Compassionate Care</h4>
+        <p>We take time to truly listen. Every patient is heard, understood, and treated with warmth and empathy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-label">Patient Stories</div>
+  <h2>What Our Patients Say</h2>
+  <p class="section-sub">Real recoveries, real people. Hear from patients who found lasting relief through classical homeopathy.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"I had suffered from severe eczema for over 8 years. Creams would suppress it temporarily, but it always came back worse. After 4 months of treatment with Dr. {{DOCTOR_NAME}}, my skin is clearer than it has ever been. I only wish I had tried homeopathy sooner."</p>
+      <div class="testimonial-author">
+        — Priya S., {{CITY}}
+        <div class="testimonial-cond">Eczema &amp; Skin Allergy</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"My daughter had recurrent tonsillitis every month. We were told surgery was the only option. Doctor gave her constitutional treatment and in 6 months, the tonsillitis has not returned even once. We are so grateful."</p>
+      <div class="testimonial-author">
+        — Rajan M., {{CITY}}
+        <div class="testimonial-cond">Child's Recurrent Tonsillitis</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"PCOS had been affecting my life for years — irregular cycles, weight gain, and mood swings. After homeopathic treatment, my cycles are regular for the first time in a decade. The online consultation and home delivery of medicines made it so convenient."</p>
+      <div class="testimonial-author">
+        — Sneha K., {{CITY}}
+        <div class="testimonial-cond">PCOS &amp; Hormonal Imbalance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTATION TIMING -->
+<section class="timing" id="timing">
+  <div class="section-label">Clinic Hours</div>
+  <h2>Consultation Timings</h2>
+  <p class="section-sub">Online consultations available Pan-India. In-clinic visits by appointment.</p>
+  <div class="timing-grid">
+    <div class="timing-card">
+      <div class="timing-icon">🗓️</div>
+      <div class="day-label">Monday – Saturday</div>
+      <div class="hours">{{MON_SAT_HOURS}}</div>
+      <div class="note">In-clinic &amp; Online available</div>
+    </div>
+    <div class="timing-card">
+      <div class="timing-icon">☀️</div>
+      <div class="day-label">Sunday</div>
+      <div class="hours">{{SUNDAY_HOURS}}</div>
+      <div class="note">Online consultation only</div>
+    </div>
+    <div class="timing-card">
+      <div class="timing-icon">📱</div>
+      <div class="day-label">Book Your Slot</div>
+      <div class="hours" style="font-size:1.1rem;">WhatsApp</div>
+      <div class="note">Instant confirmation on chat</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING CTA -->
+<section class="booking-cta" id="booking">
+  <div class="section-label">Start Your Healing Journey</div>
+  <h2>Your Health, Our Priority</h2>
+  <p class="section-sub">Book a consultation today. Medicines delivered to your doorstep — anywhere in India.</p>
+  <div class="booking-btns">
+    <a href="https://wa.me/{{WHATSAPP_RAW}}?text=Hello%20Doctor%2C%20I%20would%20like%20to%20book%20a%20homeopathy%20consultation."
+       class="btn-whatsapp-large" target="_blank" rel="noopener">
+      💬 Book Appointment on WhatsApp
+    </a>
+    <a href="tel:{{PHONE_RAW}}" class="btn-call-large">
+      📞 Call {{PHONE}}
+    </a>
+  </div>
+  <p class="booking-note">
+    WhatsApp: <strong>{{WHATSAPP}}</strong> &nbsp;|&nbsp; Phone: <strong>{{PHONE}}</strong>
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label">Reach Us</div>
+  <h2>Contact &amp; Location</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>🌿 Dr. {{DOCTOR_NAME}}</h3>
+      <div class="contact-line">
+        <span class="contact-icon">🎓</span>
+        <div>{{QUALIFICATION}}<br><small style="color:#888">Classical Homeopathic Physician</small></div>
+      </div>
+      <div class="contact-line">
+        <span class="contact-icon">📍</span>
+        <div>{{ADDRESS}}<br>{{CITY}}, {{STATE}}</div>
+      </div>
+      <div class="contact-line">
+        <span class="contact-icon">📞</span>
+        <a href="tel:{{PHONE_RAW}}">{{PHONE}}</a>
+      </div>
+      <div class="contact-line">
+        <span class="contact-icon">💬</span>
+        <a href="https://wa.me/{{WHATSAPP_RAW}}" target="_blank" rel="noopener">WhatsApp: {{WHATSAPP}}</a>
+      </div>
+      <div class="contact-line">
+        <span class="contact-icon">✉️</span>
+        <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+      </div>
+      <div class="contact-line">
+        <span class="contact-icon">🕐</span>
+        <div>
+          Mon–Sat: {{MON_SAT_HOURS}}<br>
+          Sunday: {{SUNDAY_HOURS}}
+        </div>
+      </div>
+    </div>
+    <div class="map-placeholder">
+      <div class="map-icon">📍</div>
+      <div>Replace with Google Maps embed</div>
+      <small style="margin-top:8px; color:#5a8a5a">
+        &lt;iframe src="https://maps.google.com/..." ...&gt;&lt;/iframe&gt;
+      </small>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-tagline">🌿 Your Health, Our Priority</p>
+  <p>© 2026 Dr. {{DOCTOR_NAME}} ({{QUALIFICATION}}) &nbsp;|&nbsp; Classical Homeopathy &nbsp;|&nbsp; {{CITY}}, {{STATE}}</p>
+  <p style="margin-top:6px;">
+    <a href="tel:{{PHONE_RAW}}">{{PHONE}}</a>
+    &nbsp;·&nbsp;
+    <a href="https://wa.me/{{WHATSAPP_RAW}}" target="_blank" rel="noopener">WhatsApp: {{WHATSAPP}}</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+  </p>
+  <p style="margin-top:10px; opacity:.5; font-size:.78rem;">Gentle · Safe · Natural · Classical Homeopathy</p>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/{{WHATSAPP_RAW}}?text=Hello%20Doctor%2C%20I%20would%20like%20to%20book%20a%20consultation."
+   class="wa-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
+  💬
+</a>
+
+</body>
+</html>
