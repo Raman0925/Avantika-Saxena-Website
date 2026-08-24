@@ -32,7 +32,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="tel:9999999999"
+            href="tel:9399839547"
             className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl text-sm font-semibold transition-colors"
           >
             📞 Call Now

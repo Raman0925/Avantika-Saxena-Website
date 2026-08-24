@@ -20,7 +20,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-green-200 text-sm">Call / WhatsApp</div>
-                  <a href="tel:9999999999" className="text-2xl font-bold hover:text-green-200 transition-colors">
+                  <a href="tel:9399839547" className="text-2xl font-bold hover:text-green-200 transition-colors">
                     +91 99999 99999
                   </a>
                 </div>
@@ -73,7 +73,7 @@ export default function Contact() {
                 />
               </div>
               <a
-                href="tel:9999999999"
+                href="tel:9399839547"
                 className="block w-full bg-white text-green-700 font-bold text-center py-4 rounded-xl hover:bg-green-50 transition-colors"
               >
                 📞 Call to Confirm Appointment
