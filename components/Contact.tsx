@@ -21,7 +21,7 @@ export default function Contact() {
                 <div>
                   <div className="text-green-200 text-sm">Call / WhatsApp</div>
                   <a href="tel:9399839547" className="text-2xl font-bold hover:text-green-200 transition-colors">
-                    +91 99999 99999
+                    +91 93998 39547
                   </a>
                 </div>
               </div>
