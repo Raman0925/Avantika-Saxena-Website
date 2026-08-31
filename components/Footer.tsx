@@ -10,13 +10,18 @@ export default function Footer() {
           </div>
         </div>
         <nav className="flex gap-6 text-sm">
-          {["About", "Services", "Why Homoeopathy", "Contact"].map((item) => (
+          {[
+            { label: "About", href: "#about" },
+            { label: "Services", href: "#services" },
+            { label: "Why Homoeopathy", href: "#why" },
+            { label: "Contact", href: "#contact" },
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s+/g, "")}`}
+              key={item.label}
+              href={item.href}
               className="hover:text-white transition-colors"
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </nav>
