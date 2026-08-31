@@ -108,7 +108,7 @@ export default function Contact() {
                 onClick={handleWhatsApp}
                 className="block w-full bg-[#25D366] text-white font-bold text-center py-4 rounded-xl hover:bg-[#1ebe5d] transition-colors"
               >
-                💬 Send Message to Confirm Appointment
+                💬 Confirm Appointment
               </button>
             </div>
           </div>
