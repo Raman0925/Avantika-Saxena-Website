@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Dr. Awantika Saxena | Homoeopathic Physician, Rohtak",
   description:
     "Personalised homoeopathic treatment for chronic and acute conditions. Home clinic at Suncity, Rohtak. Call +91 9399839547.",
+  openGraph: {
+    title: "Dr. Awantika Saxena | Homoeopathic Physician, Rohtak",
+    description:
+      "Personalised homoeopathic treatment for chronic and acute conditions. Home clinic at Suncity, Rohtak. Call +91 9399839547.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
