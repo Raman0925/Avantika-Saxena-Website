@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       "Personalised homoeopathic treatment for chronic and acute conditions. Home clinic at Suncity, Rohtak. Call +91 9399839547.",
     type: "website",
+    images: [{ url: "/og-image.jpg", width: 1080, height: 1080 }],
   },
 };
 
