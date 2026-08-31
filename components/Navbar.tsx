@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,7 +19,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2 font-semibold text-gray-900">
-          <span className="text-xl">🌿</span>
+          <Image src="/og-image.jpg" alt="Dr. Awantika Saxena" width={40} height={40} className="rounded-full" />
           <span>Dr. Awantika Saxena</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
