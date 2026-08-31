@@ -43,7 +43,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-gray-50">
+    <section id="services" className="py-24 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-green-600 font-semibold text-sm uppercase tracking-widest">What We Treat</span>
