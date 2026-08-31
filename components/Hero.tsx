@@ -10,9 +10,9 @@ export default function Hero() {
           <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
           Accepting Consultations
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-bold text-green-600 mb-6 leading-tight">
           Dr. Awantika
-          <span className="block text-green-600">Saxena</span>
+          <span className="block">Saxena</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 mb-4 font-light">
           Homoeopathic Physician &amp; Consultant
