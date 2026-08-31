@@ -1,4 +1,18 @@
+"use client";
+import { useState } from "react";
+
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [phone, setPhone] = useState("");
+  const [concern, setConcern] = useState("");
+
+  const handleWhatsApp = () => {
+    const msg = `Hello Dr. Awantika Saxena,\n\nName: ${name}\nAge: ${age}\nPhone: ${phone}\nConcern: ${concern}\n\nI would like to book an appointment.`;
+    const url = `https://wa.me/919399839547?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+  };
+
   return (
     <section id="contact" className="py-24 bg-gradient-to-br from-green-600 to-teal-700 text-white">
       <div className="max-w-6xl mx-auto px-6">
@@ -48,12 +62,24 @@ export default function Contact() {
           </div>
           <div className="bg-white/10 backdrop-blur rounded-3xl p-8 border border-white/20">
             <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-            <form className="space-y-4">
+            <div className="space-y-4">
               <div>
-                <label className="block text-green-200 text-sm mb-1">Your Name</label>
+                <label className="block text-green-200 text-sm mb-1">Name</label>
                 <input
                   type="text"
                   placeholder="Enter your name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-green-200 text-sm mb-1">Age</label>
+                <input
+                  type="number"
+                  placeholder="Enter your age"
+                  value={age}
+                  onChange={(e) => setAge(e.target.value)}
                   className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors"
                 />
               </div>
@@ -62,24 +88,29 @@ export default function Contact() {
                 <input
                   type="tel"
                   placeholder="+91 XXXXX XXXXX"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors"
                 />
               </div>
               <div>
                 <label className="block text-green-200 text-sm mb-1">Your Concern</label>
                 <textarea
-                  rows={4}
+                  rows={3}
                   placeholder="Briefly describe your health concern..."
+                  value={concern}
+                  onChange={(e) => setConcern(e.target.value)}
                   className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors resize-none"
                 />
               </div>
-              <a
-                href="tel:9399839547"
-                className="block w-full bg-white text-green-700 font-bold text-center py-4 rounded-xl hover:bg-green-50 transition-colors"
+              <button
+                type="button"
+                onClick={handleWhatsApp}
+                className="block w-full bg-[#25D366] text-white font-bold text-center py-4 rounded-xl hover:bg-[#1ebe5d] transition-colors"
               >
-                📞 Call to Confirm Appointment
-              </a>
-            </form>
+                💬 Send Message on WhatsApp
+              </button>
+            </div>
           </div>
         </div>
       </div>
