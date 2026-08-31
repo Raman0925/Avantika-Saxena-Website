@@ -10,7 +10,7 @@ export default function About() {
               <span className="text-green-600">Natural Healing</span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Dr. Avantika Saxena is a dedicated homoeopathic physician practising
+              Dr. Awantika Saxena is a dedicated homoeopathic physician practising
               from her home clinic in Suncity, Rohtak. With a patient-first
               approach, she offers gentle yet effective homoeopathic treatment for
               a wide range of acute and chronic conditions.
@@ -41,7 +41,7 @@ export default function About() {
                 suppress the body&apos;s natural healing ability — it works
                 with it.&rdquo;
               </blockquote>
-              <div className="mt-6 font-semibold text-green-700">— Dr. Avantika Saxena</div>
+              <div className="mt-6 font-semibold text-green-700">— Dr. Awantika Saxena</div>
             </div>
           </div>
         </div>

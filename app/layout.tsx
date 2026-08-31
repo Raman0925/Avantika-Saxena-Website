@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dr. Avantika Saxena | Homoeopathic Physician, Rohtak",
+  title: "Dr. Awantika Saxena | Homoeopathic Physician, Rohtak",
   description:
     "Personalised homoeopathic treatment for chronic and acute conditions. Home clinic at Suncity, Rohtak. Call +91 9399839547.",
 };

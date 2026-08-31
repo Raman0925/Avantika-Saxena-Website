@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           <span className="text-2xl">🌿</span>
           <div>
-            <div className="text-white font-semibold">Dr. Avantika Saxena</div>
+            <div className="text-white font-semibold">Dr. Awantika Saxena</div>
             <div className="text-sm">Homoeopathic Physician · Suncity, Rohtak</div>
           </div>
         </div>
@@ -21,7 +21,7 @@ export default function Footer() {
           ))}
         </nav>
         <div className="text-sm">
-          © {new Date().getFullYear()} Dr. Avantika Saxena. All rights reserved.
+          © {new Date().getFullYear()} Dr. Awantika Saxena. All rights reserved.
         </div>
       </div>
     </footer>

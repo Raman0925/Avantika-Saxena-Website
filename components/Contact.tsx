@@ -40,7 +40,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-green-200 text-sm">Clinic Hours</div>
-                  <div className="text-xl font-semibold">Mon – Sat &nbsp;|&nbsp; 10:00 AM – 7:00 PM</div>
+                  <div className="text-xl font-semibold">Mon – Sat &nbsp;|&nbsp; 4:00 PM – 8:00 PM</div>
+                  <div className="text-base font-medium mt-1 text-green-200">Sunday &nbsp;|&nbsp; 10:00 AM – 4:00 PM</div>
                 </div>
               </div>
             </div>

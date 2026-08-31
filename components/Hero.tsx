@@ -11,7 +11,7 @@ export default function Hero() {
           Accepting Consultations
         </div>
         <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-          Dr. Avantika
+          Dr. Awantika
           <span className="block text-green-600">Saxena</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 mb-4 font-light">
